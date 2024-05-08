@@ -1,4 +1,4 @@
-import { APIConection } from "./APIConnection.js";
+import { APIConnection } from "./APIConnection.js";
 
 const list = document.querySelector('[data-list]');
 
