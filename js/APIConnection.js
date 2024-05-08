@@ -11,7 +11,7 @@ async function uploadVideo(title, description, url, image) {
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({
             title: title,
-            description: description,
+            description: `${description} mil visualizaciones`,
             url: url,
             image: image
         })
