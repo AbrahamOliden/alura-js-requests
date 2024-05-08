@@ -1,14 +1,19 @@
+import { APIConnection } from './APIConnection.js';
+
 const form = document.querySelector('[data-form]');
 
-function uploadVideo(event) {
+async function uploadVideo(event) {
 
     event.preventDefault();
 
     const url = document.querySelector('[data-url]').value;
-    const title = document.querySelector('[data-title]').value;
-    const image = document.querySelector('[data-image]').value;
+    const titulo = document.querySelector('[data-title]').value;
+    const imagen = document.querySelector('[data-image]').value;
 
-    const description = Math.floor(Math.random() * 10).toString();
+    const descripcion = Math.floor(Math.random() * 10).toString();
+
+    await APIConnection.uploadVideo(titulo, descripcion, url, imagen);
+    window.location.href='../pages/envio-concluido.html';
 };
 
 form.addEventListener('submit', (event) => uploadVideo(event));

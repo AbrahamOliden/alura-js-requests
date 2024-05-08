@@ -5,15 +5,15 @@ async function listVideos() {
     return parsedConnection;
 };
 
-async function uploadVideo(title, description, url, image) {
+async function uploadVideo(titulo, descripcion, url, imagen) {
     const connection = await fetch("http://localhost:3001/videos", {
         method: 'POST',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({
-            title: title,
-            description: `${description} mil visualizaciones`,
+            titulo: titulo,
+            descripcion: `${descripcion} mil visualizaciones`,
             url: url,
-            image: image
+            imagen: imagen
         })
     });
 
@@ -22,7 +22,7 @@ async function uploadVideo(title, description, url, image) {
     return parsedConnection;
 };
 
-export const APIConection = {
+export const APIConnection = {
     listVideos, uploadVideo
 };
 
