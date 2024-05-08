@@ -18,7 +18,7 @@ function createCard(titulo, descripcion, url, imagen) {
 };
 
 async function listVideos() {
-    const APIList = await APIConection.listVideos();
+    const APIList = await APIConnection.listVideos();
 
     APIList.forEach( video => list.appendChild( createCard(video.titulo, video.descripcion, video.url, video.imagen) ) );
 };
