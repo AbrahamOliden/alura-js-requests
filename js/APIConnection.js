@@ -22,8 +22,15 @@ async function uploadVideo(titulo, descripcion, url, imagen) {
     return parsedConnection;
 };
 
+async function lookUpVideos(keyword) {
+    const connection = await fetch(`http://localhost:3001/videos?q=${keyword}`);
+    const parsedConnection = connection.json();
+
+    return parsedConnection;
+}
+
 export const APIConnection = {
-    listVideos, uploadVideo
+    listVideos, uploadVideo, lookUpVideos
 };
 
 // listVideos();
