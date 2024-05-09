@@ -9,6 +9,10 @@ async function filterVideo(event) {
 
     const list = document.querySelector('[data-list]');
 
+    while(list.firstChild) {
+        list.removeChild(list.firstChild);
+    };
+
     lookUp.forEach( video => list.appendChild( createCard(video.titulo, video.descripcion, video.url, video.imagen) ) );
 
     // console.log(lookUp);
