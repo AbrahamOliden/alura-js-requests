@@ -19,6 +19,10 @@ async function uploadVideo(titulo, descripcion, url, imagen) {
 
     const parsedConnection = connection.json();
 
+    if( !connection.ok) {
+        throw new Error('An error has ocurred while uploading the video');
+    }
+
     return parsedConnection;
 };
 
