@@ -15,6 +15,12 @@ async function filterVideo(event) {
 
     lookUp.forEach( video => list.appendChild( createCard(video.titulo, video.descripcion, video.url, video.imagen) ) );
 
+    if( lookUp.length === 0 ) {
+        list.innerHTML = `
+        <h2 class="mensaje__titulo">No elements matched for "${lookUpData}"</h2>
+        `;
+    };
+
     // console.log(lookUp);
 };
 
