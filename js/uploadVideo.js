@@ -12,8 +12,12 @@ async function uploadVideo(event) {
 
     const descripcion = Math.floor(Math.random() * 10).toString();
 
-    await APIConnection.uploadVideo(titulo, descripcion, url, imagen);
-    window.location.href='../pages/envio-concluido.html';
+    try {
+        await APIConnection.uploadVideo(titulo, descripcion, url, imagen);
+        window.location.href='../pages/envio-concluido.html';
+    } catch(e) {
+        alert(e);
+    };
 };
 
 form.addEventListener('submit', (event) => uploadVideo(event));
